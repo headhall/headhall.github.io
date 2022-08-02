@@ -1,13 +1,15 @@
 .button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
     display: inline-flex;
     align-items: center;
-    box-sizing: border-box;
     justify-content: center;
     text-align: left;
     cursor: pointer;
     text-decoration: none;
-    font-weight: var(--bold);
-    border-radius: var(--border-radius);
+    font-weight: var(--button-bold);
+    border-radius: var(--button-border-radius);
 }
 
 /* Disabled */
@@ -18,13 +20,13 @@
 
 /* Sizes */
 
-.button._xs         {min-height:24px;padding:calc(12px / 4) calc(12px - 1px);font-size:calc(var(--button-base-font-size) - 2px);line-height:calc(var(--button-base-font-size) - 2px / 3 * 4)}
-.button._s          {min-height:30px;padding:calc(15px / 4) calc(15px - 1px);font-size:calc(var(--button-base-font-size) - 1px);line-height:calc(var(--button-base-font-size) - 1px / 3 * 4)}
-.button._m, .button {min-height:36px;padding:calc(18px / 4) calc(18px - 1px);font-size:var(--button-base-font-size);            line-height:calc(var(--button-base-font-size) / 3 * 4)}
-.button._l          {min-height:42px;padding:calc(21px / 4) calc(21px - 1px);font-size:calc(var(--button-base-font-size) + 2px);line-height:calc(var(--button-base-font-size) + 2px / 3 * 4)}
-.button._xl         {min-height:48px;padding:calc(24px / 4) calc(24px - 1px);font-size:calc(var(--button-base-font-size) + 3px);line-height:calc(var(--button-base-font-size) + 3px / 3 * 4)}
-.button._xxl        {min-height:60px;padding:calc(30px / 4) calc(30px - 1px);font-size:calc(var(--button-base-font-size) + 5px);line-height:calc(var(--button-base-font-size) + 5px / 3 * 4)}
-.button._xxxl       {min-height:72px;padding:calc(36px / 4) calc(36px - 1px);font-size:calc(var(--button-base-font-size) + 7px);line-height:calc(var(--button-base-font-size) + 7px / 3 * 4)}
+.button._xs         {min-height:24px;padding:calc(12px / 4) calc(12px - 1px);font-size:calc(var(--button-default-font-size) - 2px);line-height:calc(var(--button-default-font-size) - 2px / 3 * 4)}
+.button._s          {min-height:30px;padding:calc(15px / 4) calc(15px - 1px);font-size:calc(var(--button-default-font-size) - 1px);line-height:calc(var(--button-default-font-size) - 1px / 3 * 4)}
+.button._m, .button {min-height:36px;padding:calc(18px / 4) calc(18px - 1px);font-size:var(--button-default-font-size);            line-height:calc(var(--button-default-font-size) / 3 * 4)}
+.button._l          {min-height:42px;padding:calc(21px / 4) calc(21px - 1px);font-size:calc(var(--button-default-font-size) + 2px);line-height:calc(var(--button-default-font-size) + 2px / 3 * 4)}
+.button._xl         {min-height:48px;padding:calc(24px / 4) calc(24px - 1px);font-size:calc(var(--button-default-font-size) + 3px);line-height:calc(var(--button-default-font-size) + 3px / 3 * 4)}
+.button._xxl        {min-height:60px;padding:calc(30px / 4) calc(30px - 1px);font-size:calc(var(--button-default-font-size) + 5px);line-height:calc(var(--button-default-font-size) + 5px / 3 * 4)}
+.button._xxxl       {min-height:72px;padding:calc(36px / 4) calc(36px - 1px);font-size:calc(var(--button-default-font-size) + 7px);line-height:calc(var(--button-default-font-size) + 7px / 3 * 4)}
 
 /* Shape */
 
@@ -73,107 +75,112 @@
 
 /* Default */
 
-.button,          .button._default          {background-color:var(--white);border:1px solid var(--border-color);color:var(--dark);}
-.button:hover,    .button._default:hover    {animation:dark 1s -.05s forwards paused;color:var(--dark);}
-.button._current, .button._default._current {animation:dark 1s -.125s forwards paused;}
-.button:active,   .button._default:active   {animation:dark 1s -.1s forwards paused;}
+.button,          .button._default          {background-color:var(--button-white);border:1px solid var(--button-default-border-color);color:var(--button-dark);}
+.button:hover,    .button._default:hover    {animation:button-dark 1s -.05s forwards paused;color:var(--button-dark);}
+.button._current, .button._default._current {animation:button-dark 1s -.125s forwards paused;}
+.button:active,   .button._default:active   {animation:button-dark 1s -.1s forwards paused;}
 
 /* Link */
 
 .button._link {border-color:transparent;background-color:transparent;}
-.button:not([disabled])._link:hover {animation:dark 1s -.05s forwards paused;}
-.button:not([disabled])._link._current {animation:dark 1s -.125s forwards paused;}
-.button:not([disabled])._link:active {animation:dark 1s -.1s forwards paused;}
+.button:not([disabled])._link:hover {animation:button-dark 1s -.05s forwards paused;}
+.button:not([disabled])._link._current {animation:button-dark 1s -.125s forwards paused;}
+.button:not([disabled])._link:active {animation:button-dark 1s -.1s forwards paused;}
 
 /* White */
 
-.button._white {border-color:transparent;background-color:var(--white);}
-.button:not([disabled])._white:hover {animation:dark 1s -.05s forwards paused;}
-.button:not([disabled])._white._current {animation:dark 1s -.125s forwards paused;}
-.button:not([disabled])._white:active {animation:dark 1s -.1s forwards paused;}
+.button._white {border-color:transparent;background-color:var(--button-white);}
+.button:not([disabled])._white:hover {animation:button-dark 1s -.05s forwards paused;}
+.button:not([disabled])._white._current {animation:button-dark 1s -.125s forwards paused;}
+.button:not([disabled])._white:active {animation:button-dark 1s -.1s forwards paused;}
 
 /* Light */
 
-.button._light {border-color:transparent;background-color:var(--light);}
-.button:not([disabled])._light:hover {animation:white 1s -.15s forwards paused;}
-.button:not([disabled])._light._current {animation:dark 1s -.125s forwards paused;}
-.button:not([disabled])._light:active {animation:dark 1s -.1s forwards paused;}
+.button._light {border-color:transparent;background-color:var(--button-light);}
+.button:not([disabled])._light:hover {animation:button-white 1s -.15s forwards paused;}
+.button:not([disabled])._light._current {animation:button-dark 1s -.125s forwards paused;}
+.button:not([disabled])._light:active {animation:button-dark 1s -.1s forwards paused;}
 
 /* Transparent */
 
-.button._transparent {border-color:transparent;background-color:transparent;color:var(--white);opacity:0.75}
-.button:not([disabled])._transparent:hover {animation:none;opacity:1;}
-.button:not([disabled])._transparent._current {animation:none;}
-.button:not([disabled])._transparent:active {animation:none;}
+.button._transparent {border-color:transparent;background-color:transparent;color:var(--button-white);opacity:0.75}
+.button:not([disabled])._transparent:hover {animation:button-none;opacity:1;}
+.button:not([disabled])._transparent._current {animation:button-none;}
+.button:not([disabled])._transparent:active {animation:button-none;}
 
 /* Grey */
 
-.button._grey {border-color:transparent;color:var(--white);background-color:var(--grey);}
-.button:not([disabled])._grey:hover {animation:white 1s -.15s forwards paused;}
-.button:not([disabled])._grey._current {animation:white 1s -.175s forwards paused;}
-.button:not([disabled])._grey:active {animation:dark 1s -.1s forwards paused;}
+.button._grey {border-color:transparent;color:var(--button-white);background-color:var(--button-grey);}
+.button:not([disabled])._grey:hover {animation:button-white 1s -.15s forwards paused;}
+.button:not([disabled])._grey._current {animation:button-white 1s -.175s forwards paused;}
+.button:not([disabled])._grey:active {animation:button-dark 1s -.1s forwards paused;}
 
-.button._grey._bordered {color:var(--grey);border-color:var(--grey);background-color:var(--white);}
-.button:not([disabled])._grey._bordered:hover {animation:dark 1s -.05s forwards paused;}
-.button:not([disabled])._grey._bordered._current {animation:dark 1s -.075s forwards paused;}
-.button:not([disabled])._grey._bordered:active {animation:dark 1s -.1s forwards paused;}
+.button._grey._bordered {color:var(--button-grey);border-color:var(--button-grey);background-color:var(--button-white);}
+.button:not([disabled])._grey._bordered:hover {animation:button-dark 1s -.05s forwards paused;}
+.button:not([disabled])._grey._bordered._current {animation:button-dark 1s -.075s forwards paused;}
+.button:not([disabled])._grey._bordered:active {animation:button-dark 1s -.1s forwards paused;}
 .button._grey._bordered._loading {background-image:var(--button-loader-grey);}
 
 /* Blue */
 
-.button._blue {background-color:var(--blue);color:var(--white);border-color:transparent;}
-.button:not([disabled])._blue:hover {animation:white 1s -.15s forwards paused;}
-.button:not([disabled])._blue._current {animation:white 1s -.175s forwards paused;}
-.button:not([disabled])._blue:active {animation:dark 1s -.1s forwards paused;}
+.button._blue {background-color:var(--button-blue);color:var(--button-white);border-color:transparent;}
+.button:not([disabled])._blue:hover {animation:button-white 1s -.15s forwards paused;}
+.button:not([disabled])._blue._current {animation:button-white 1s -.175s forwards paused;}
+.button:not([disabled])._blue:active {animation:button-dark 1s -.1s forwards paused;}
 
-.button._blue._bordered {color:var(--blue);border-color:var(--blue);background-color:var(--white);}
-.button:not([disabled])._blue._bordered:hover {animation:blue 1s -.1s forwards paused;}
-.button:not([disabled])._blue._bordered._current {animation:blue 1s -.125s forwards paused;}
-.button:not([disabled])._blue._bordered:active {animation:blue 1s -.15s forwards paused;}
+.button._blue._bordered {color:var(--button-blue);border-color:var(--button-blue);background-color:var(--button-white);}
+.button:not([disabled])._blue._bordered:hover {animation:button-blue 1s -.1s forwards paused;}
+.button:not([disabled])._blue._bordered._current {animation:button-blue 1s -.125s forwards paused;}
+.button:not([disabled])._blue._bordered:active {animation:button-blue 1s -.15s forwards paused;}
 .button._blue._bordered._loading {background-image:var(--button-loader-blue);}
 
 /* Green */
 
-.button._green {background-color:var(--green);color:var(--white);border-color:transparent;}
-.button:not([disabled])._green:hover {animation:white 1s -.15s forwards paused;}
-.button:not([disabled])._green._current {animation:white 1s -.175s forwards paused;}
-.button:not([disabled])._green:active {animation:dark 1s -.1s forwards paused;}
+.button._green {background-color:var(--button-green);color:var(--button-white);border-color:transparent;}
+.button:not([disabled])._green:hover {animation:button-white 1s -.15s forwards paused;}
+.button:not([disabled])._green._current {animation:button-white 1s -.175s forwards paused;}
+.button:not([disabled])._green:active {animation:button-dark 1s -.1s forwards paused;}
 
-.button._green._bordered {color:var(--green);border-color:var(--green);background-color:var(--white);}
-.button:not([disabled])._green._bordered:hover {animation:green 1s -.1s forwards paused;}
-.button:not([disabled])._green._bordered._current {animation:green 1s -.125s forwards paused;}
-.button:not([disabled])._green._bordered:active {animation:green 1s -.15s forwards paused;}
+.button._green._bordered {color:var(--button-green);border-color:var(--button-green);background-color:var(--button-white);}
+.button:not([disabled])._green._bordered:hover {animation:button-green 1s -.1s forwards paused;}
+.button:not([disabled])._green._bordered._current {animation:button-green 1s -.125s forwards paused;}
+.button:not([disabled])._green._bordered:active {animation:button-green 1s -.15s forwards paused;}
 .button._green._bordered._loading {background-image:var(--button-loader-green);}
 
 /* Red */
 
-.button._red {background-color:var(--red);color:var(--white);border-color:transparent;}
-.button:not([disabled])._red:hover {animation:white 1s -.15s forwards paused;}
-.button:not([disabled])._red._current {animation:white 1s -.175s forwards paused;}
-.button:not([disabled])._red:active {animation:dark 1s -.1s forwards paused;}
+.button._red {background-color:var(--button-red);color:var(--button-white);border-color:transparent;}
+.button:not([disabled])._red:hover {animation:button-white 1s -.15s forwards paused;}
+.button:not([disabled])._red._current {animation:button-white 1s -.175s forwards paused;}
+.button:not([disabled])._red:active {animation:button-dark 1s -.1s forwards paused;}
 
-.button._red._bordered {color:var(--red);border-color:var(--red);background-color:var(--white);}
-.button:not([disabled])._red._bordered:hover {animation:red 1s -.1s forwards paused;}
-.button:not([disabled])._red._bordered._current {animation:red 1s -.125s forwards paused;}
-.button:not([disabled])._red._bordered:active {animation:red 1s -.15s forwards paused;}
+.button._red._bordered {color:var(--button-red);border-color:var(--button-red);background-color:var(--button-white);}
+.button:not([disabled])._red._bordered:hover {animation:button-red 1s -.1s forwards paused;}
+.button:not([disabled])._red._bordered._current {animation:button-red 1s -.125s forwards paused;}
+.button:not([disabled])._red._bordered:active {animation:button-red 1s -.15s forwards paused;}
 .button._red._bordered._loading {background-image:var(--button-loader-red);}
 
 /* dark */
 
-.button._dark {background-color:var(--dark);color:var(--white);border-color:transparent;}
-.button:not([disabled])._dark:hover {animation:white 1s -.15s forwards paused;}
-.button:not([disabled])._dark._current {animation:white 1s -.175s forwards paused;}
-.button:not([disabled])._dark:active {animation:white 1s -.1s forwards paused;}
+.button._dark {background-color:var(--button-dark);color:var(--button-white);border-color:transparent;}
+.button:not([disabled])._dark:hover {animation:button-white 1s -.15s forwards paused;}
+.button:not([disabled])._dark._current {animation:button-white 1s -.175s forwards paused;}
+.button:not([disabled])._dark:active {animation:button-white 1s -.1s forwards paused;}
 
-.button._dark._bordered {color:var(--dark);border-color:var(--dark);background-color:var(--white);}
-.button:not([disabled])._dark._bordered:hover {animation:dark 1s -.1s forwards paused;}
-.button:not([disabled])._dark._bordered._current {animation:dark 1s -.125s forwards paused;}
-.button:not([disabled])._dark._bordered:active {animation:dark 1s -.15s forwards paused;}
+.button._dark._bordered {color:var(--button-dark);border-color:var(--button-dark);background-color:var(--button-white);}
+.button:not([disabled])._dark._bordered:hover {animation:button-dark 1s -.1s forwards paused;}
+.button:not([disabled])._dark._bordered._current {animation:button-dark 1s -.125s forwards paused;}
+.button:not([disabled])._dark._bordered:active {animation:button-dark 1s -.15s forwards paused;}
 .button._dark._bordered._loading {background-image:var(--button-loader-dark);}
 
 /* Loading */
-.button._loading {color:transparent !important;background-position:center;background-repeat:no-repeat;background-size:auto 140%;}
-.button._loading, .button._loading._left-iconnk, .button._loading._white, .button._loading._light {
+.button._loading {
+    color:transparent !important;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:auto 140%;
+}
+.button._loading, .button._loading._link, .button._loading._white, .button._loading._light {
     background-image:var(--button-loader-dark);
 }
 .button._loading._grey, .button._loading._blue, .button._loading._green, .button._loading._red, .button._loading._orange, .button._loading._dark, .button._loading._transparent {
@@ -183,4 +190,13 @@
 /* Group */
 .button-group {display:flex;}
     .button-group .button:not(:first-child) {border-top-left-radius:0;border-bottom-left-radius:0;margin-left:-1px;}
-    .button-group .button:not(:last-child) {border-top-right-radius:0;border-bottom-right-radius:0;} 
+    .button-group .button:not(:last-child) {border-top-right-radius:0;border-bottom-right-radius:0;}
+    
+/* Keyframes */
+
+@keyframes button-red   {to {background-color:var(--button-red);}}
+@keyframes button-green {to {background-color:var(--button-green);}}
+@keyframes button-blue  {to {background-color:var(--button-blue);}}
+@keyframes button-grey  {to {background-color:var(--button-grey);}}
+@keyframes button-white {to {background-color:var(--button-white);}}
+@keyframes button-dark  {to {background-color:var(--button-dark);}}

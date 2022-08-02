@@ -1,6 +1,0 @@
-@keyframes red {to {background-color:var(--red);}}
-@keyframes green {to {background-color:var(--green);}}
-@keyframes blue {to {background-color:var(--blue);}}
-@keyframes grey {to {background-color:var(--grey);}}
-@keyframes white {to {background-color:var(--white);}}
-@keyframes dark {to {background-color:var(--dark);}}
